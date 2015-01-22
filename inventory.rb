@@ -1,15 +1,16 @@
 # inventory assignment
 
-# user can
-# - add/remove
-# - set # of items
-# - print out in table
-# - zero out an item
-# - not able to put in bs data
-# - options list (help)
-# - not able to break it
 # - push to github
-# - can't enter nonsense stuff (negatives, letters, etc)
+
+# user can
+  # o- add/remove
+  # o- set # of items
+  # - print out in table
+  # - zero out an item to delete it // i disagree. you should be able to have 0 of an item
+  # o- not able to put in bs data
+  # o- options list (help)
+  # o- not able to break it
+
 
 
 # initialize inventory hash
@@ -19,10 +20,14 @@ inventory = {}
 puts "Welcome to Tijo's inventory. What's your first item?"
 first_item = gets.chomp
 puts "How many #{first_item}s do you have?"
-first_number = gets.chomp
+first_number = gets.chomp.to_i
 
 # - set first value
-inventory[first_item] = first_number
+if first_number >= 0
+  inventory[first_item] = first_number
+else
+  puts "Can't have negative inventory."
+end
 
 # - whole program runs on a while loop until you type 'quit'
 running = true
@@ -49,7 +54,11 @@ while running
     else
       puts "How many #{item}s would you like to add?"
       number = gets.chomp.to_i
-      inventory[item] = number
+      if number >= 0
+        inventory[item] = number
+      else
+        puts "Can't have negative inventory."
+      end
     end
 
 
@@ -68,7 +77,11 @@ while running
     if inventory[item]
       puts "How many #{item}s do you have?"
       number = gets.chomp.to_i
-      inventory[item] = number
+      if number >= 0
+        inventory[item] = number
+      else
+        puts "Can't have negative inventory."
+      end
     else
       puts "Item not in inventory."
     end
@@ -77,7 +90,7 @@ while running
     puts "What item would you like to check?"
     item = gets.chomp
     if inventory[item]
-      "You have #{inventiory[item]} #{item}s."
+      puts "You have #{inventory[item]} #{item}s."
     else
       puts "Item not in inventory."
     end
