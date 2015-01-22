@@ -18,22 +18,16 @@
 
 # initialize hash. Start program 
 
+inventory = {}
 
-
-# puts "Welcome to Tijo's inventory. What's your first item?"
-# first_item = gets.chomp
-# puts "How many #{first_item}s do you have?"
-# first_number = gets.chomp
-# inventory[first_item] = first_number
-# # puts inventory
-
-
-#--------------------------
-
-# methods defined here
+puts "Welcome to Tijo's inventory. What's your first item?"
+first_item = gets.chomp
+puts "How many #{first_item}s do you have?"
+first_number = gets.chomp
+inventory[first_item] = first_number
 
 def prompt
-  inventory = {}
+
   puts "What would you like to do? Type 'help' for options."
   action = gets.chomp.downcase
 
@@ -94,28 +88,5 @@ prompt
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-# def get_input
-
-# end
 
 
