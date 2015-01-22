@@ -6,7 +6,7 @@
   # o- add/remove
   # o- set # of items
   # - print out in table
-  # - zero out an item to delete it // i disagree. you should be able to have 0 of an item
+  # x- zero out an item to delete it // i disagree. you should be able to have 0 of an item
   # o- not able to put in bs data
   # o- options list (help)
   # o- not able to break it
