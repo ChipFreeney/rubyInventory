@@ -43,8 +43,7 @@ while running
       update  - update the number of an item
       check   - check the number of an item
       print   - print a table of your inventory
-      quit    - quit program
-      "
+      quit    - quit program"
 
   when "add"
     puts "What would you like to add?"
@@ -96,7 +95,8 @@ while running
     end
 
   when "print"
-    puts inventory
+    puts "
+          #{inventory}"
 
   when "quit"
     running = false
