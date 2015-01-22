@@ -32,7 +32,7 @@ end
 # - whole program runs on a while loop until you type 'quit'
 running = true
 while running
-  puts "What would you like to do? Type 'help' for options."
+  puts "\nWhat would you like to do? Type 'help' for options."
   action = gets.chomp.downcase
 
   case action
