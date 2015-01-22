@@ -18,12 +18,13 @@ inventory = {}
 # initial prompt
 puts "Welcome to Tijo's inventory. What's your first item?"
 first_item = gets.chomp
-
 puts "How many #{first_item}s do you have?"
 first_number = gets.chomp
 
+# - set first value
 inventory[first_item] = first_number
 
+# - whole program runs on a while loop until you type 'quit'
 running = true
 while running
   puts "What would you like to do? Type 'help' for options."
@@ -32,12 +33,12 @@ while running
   case action
   when "help"
     puts "
-      add - add a new item
-      remove - remove an existing item
-      update - update the number of an item
-      check - check the number of an item
-      print - print a table of your inventory
-      quit - quits program
+      add     - add a new item
+      remove  - remove an existing item
+      update  - update the number of an item
+      check   - check the number of an item
+      print   - print a table of your inventory
+      quit    - quit program
       "
 
   when "add"
@@ -72,9 +73,6 @@ while running
       puts "Item not in inventory."
     end
 
-  when "print"
-    puts inventory
-
   when "check"
     puts "What item would you like to check?"
     item = gets.chomp
@@ -83,6 +81,9 @@ while running
     else
       puts "Item not in inventory."
     end
+
+  when "print"
+    puts inventory
 
   when "quit"
     running = false
