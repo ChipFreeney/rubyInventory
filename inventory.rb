@@ -9,6 +9,7 @@
 # - options list (help)
 # - not able to break it
 # - push to github
+# - can't enter nonsense stuff (negatives, letters, etc)
 
 
 # initialize inventory hash
@@ -43,7 +44,7 @@ while running
     puts "What would you like to add?"
     item = gets.chomp
     if inventory[item]
-      puts "item already exists"
+      puts "Item already exists."
     else
       puts "How many #{item}s would you like to add?"
       number = gets.chomp.to_i
@@ -52,28 +53,43 @@ while running
 
 
   when "remove"
-    puts "# remove code"
+    puts "What item would you like to remove?"
+    item = gets.chomp
+    if inventory[item]
+      inventory.delete(item)
+    else
+      puts "Item not in inventory."
+    end
 
   when "update"
-    puts "# update code"
+    puts "What item would you like to update?"
+    item = gets.chomp
+    if inventory[item]
+      puts "How many #{item}s do you have?"
+      number = gets.chomp.to_i
+      inventory[item] = number
+    else
+      puts "Item not in inventory."
+    end
 
   when "print"
     puts inventory
 
   when "check"
-    puts "# code that shows use how many of something"
+    puts "What item would you like to check?"
+    item = gets.chomp
+    if inventory[item]
+      "You have #{inventiory[item]} #{item}s."
+    else
+      puts "Item not in inventory."
+    end
 
   when "quit"
     running = false
 
   else
-    puts "Command not recognized"
+    puts "Command not recognized."
 
   end
-
-
-
-
-
 
 end
