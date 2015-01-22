@@ -11,28 +11,20 @@
 # - push to github
 
 
-
-
-############
-# make this whole bitch a while loop
-#############
-
-
-# initialize hash. Start program 
-
-
-# make global
+# initialize inventory hash
 inventory = {}
 
+# initial prompt
 puts "Welcome to Tijo's inventory. What's your first item?"
 first_item = gets.chomp
+
 puts "How many #{first_item}s do you have?"
 first_number = gets.chomp
+
 inventory[first_item] = first_number
 
-# make a lambda
-def prompt
-
+running = true
+while running
   puts "What would you like to do? Type 'help' for options."
   action = gets.chomp.downcase
 
@@ -46,7 +38,6 @@ def prompt
       print - print a table of your inventory
       quit - quits program
       "
-    prompt
 
   when "add"
     puts "What would you like to add?"
@@ -59,39 +50,30 @@ def prompt
       inventory[item] = number
     end
 
-    prompt
 
   when "remove"
     puts "# remove code"
-    prompt
 
   when "update"
     puts "# update code"
-    prompt
 
   when "print"
     puts inventory
-    prompt
 
   when "check"
     puts "# code that shows use how many of something"
-    prompt
 
   when "quit"
-    # quits program
+    running = false
 
   else
     puts "Command not recognized"
-    prompt
 
   end
+
+
+
+
+
+
 end
-
-
-
-prompt
-
-
-
-
-
